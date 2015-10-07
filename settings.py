@@ -24,9 +24,9 @@ import sys
 import os.path
 
 # Mailman API credentials
-MAILMAN_API_URL = 'http://localhost:8001'
-MAILMAN_USER = 'restadmin'
-MAILMAN_PASS = 'restpass'
+MAILMAN_REST_API_URL = 'http://localhost:8001'
+MAILMAN_REST_API_USER = 'restadmin'
+MAILMAN_REST_API_PASS = 'restpass'
 
 # CSS theme for mailman-django application
 MAILMAN_THEME = "default"
