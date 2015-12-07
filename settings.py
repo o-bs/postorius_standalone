@@ -166,6 +166,13 @@ BROWSERID_USERNAME_ALGO = username
 # EMAIL_CONFIRMATION_SUBJECT = 'Confirmation needed'
 
 
+# Compatibility with Bootstrap 3
+from django.contrib.messages import constants as messages
+MESSAGE_TAGS = {
+    messages.ERROR: 'danger'
+}
+
+
 try:
     from settings_local import *
 except ImportError:
