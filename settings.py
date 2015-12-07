@@ -61,8 +61,6 @@ TIME_ZONE = 'America/Chicago'
 # http://www.i18nguy.com/unicode/language-identifiers.html
 LANGUAGE_CODE = 'en-us'
 
-SITE_ID = 1
-
 # If you set this to False, Django will make some optimizations so as not
 # to load the internationalization machinery.
 USE_I18N = True
@@ -136,7 +134,6 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
-    'django.contrib.sites',
     'django.contrib.admin',
     'django.contrib.staticfiles',
     'postorius',
@@ -148,6 +145,7 @@ INSTALLED_APPS = (
 LOGIN_URL          = '/postorius/accounts/login/'
 LOGIN_REDIRECT_URL = '/postorius/'
 LOGIN_ERROR_URL    = '/postorius/accounts/login/'
+LOGOUT_URL = '/postorius/accounts/logout/'
 
 def username(email):
     return email
