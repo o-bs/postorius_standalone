@@ -18,7 +18,7 @@
 
 import postorius
 
-from django.conf.urls import *
+from django.conf.urls import include, url
 from django.conf import settings
 
 # Uncomment the next two lines to enable the admin:
@@ -31,8 +31,8 @@ admin.autodiscover()
 # `mailman_django.urls`.
 # from mailman_django import urls as mailman_urls
 
-urlpatterns = patterns('',
+urlpatterns = [
     url('', include('django_browserid.urls')),
-    url(r'^$', 'postorius.views.list_index'),
-    (r'^postorius/', include('postorius.urls')),
-)
+    url(r'^$', 'postorius.views.list.list_index'),
+    url(r'^postorius/', include('postorius.urls')),
+]
