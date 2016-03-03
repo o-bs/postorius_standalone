@@ -1,3 +1,4 @@
 postorius.db
 .coverage
 cover/
+settings_local.py
