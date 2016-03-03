@@ -111,7 +111,7 @@ WSGI_APPLICATION = 'wsgi.application'
 
 
 # Database
-# https://docs.djangoproject.com/en/{{ docs_version }}/ref/settings/#databases
+# https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
 DATABASES = {
     'default': {
@@ -122,7 +122,7 @@ DATABASES = {
 
 
 # Internationalization
-# https://docs.djangoproject.com/en/{{ docs_version }}/topics/i18n/
+# https://docs.djangoproject.com/en/1.8/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
 
@@ -136,13 +136,27 @@ USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/{{ docs_version }}/howto/static-files/
+# https://docs.djangoproject.com/en/1.8/howto/static-files/
 
+
+# Absolute path to the directory static files should be collected to.
+# Don't put anything in this directory yourself; store your static files
+# in apps' "static/" subdirectories and in STATICFILES_DIRS.
+# Example: "/var/www/example.com/static/"
+#STATIC_ROOT = ''
+STATIC_ROOT = BASE_DIR + '/static/'
+
+# URL prefix for static files.
+# Example: "http://example.com/static/", "http://static.example.com/"
 STATIC_URL = '/static/'
 
-
-# CSS theme for postorius
-MAILMAN_THEME = "default"
+# Additional locations of static files
+STATICFILES_DIRS = (
+    # Put strings here, like "/home/html/static" or "C:/www/django/static".
+    # Always use forward slashes, even on Windows.
+    # Don't forget to use absolute paths, not relative paths.
+    #BASE_DIR + '/static/',
+)
 
 
 LOGIN_URL          = 'user_login'
@@ -162,8 +176,8 @@ MESSAGE_TAGS = {
 
 
 AUTHENTICATION_BACKENDS = (
-    'django.contrib.auth.backends.ModelBackend',
     'django_browserid.auth.BrowserIDBackend',
+    'django.contrib.auth.backends.ModelBackend',
 )
 
 
