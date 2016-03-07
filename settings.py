@@ -163,8 +163,10 @@ LOGIN_URL          = 'user_login'
 LOGIN_REDIRECT_URL = 'list_index'
 LOGOUT_URL         = 'user_logout'
 
+# Use the email username as identifier, but truncate it because
+# the User.username field is only 30 chars long.
 def username(email):
-    return email.rsplit('@', 1)[0]
+    return email.rsplit('@', 1)[0][:30]
 BROWSERID_USERNAME_ALGO = username
 
 
